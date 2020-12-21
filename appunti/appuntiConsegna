@@ -16,10 +16,9 @@ SEGNALI INTERNI:
 
 - Se BANCOMAT_INSERITO:
     - 1: Inizia a riconoscere CODICE 
-        Dopodiché BANCOMAT_INSERITO don't care (dc)
     - 0: tutti gli OUTPUTS a 0
 - CODICE è un intero di 3 cifre [0 .. 9] inserite in istanti consecutivi; ogni cifra è codificata con 4 bit
-- Valore di CODICE da riconoscere: 5 5 0 ovvero 0101 0101 
+- Valore di CODICE da riconoscere: 5 5 0 ovvero 0101 0101
 - CASH_RICHIESTO ha range [0 .. 1023], codificato con 10 bit 
 - CASH_DISPONIBILE ha range [0 .. 65535], codificato con 16 bit
 - Se CODICE == 5 5 0 si legge CASH_RICHIESTO
@@ -39,3 +38,4 @@ Osservazioni:
 - CODICE deve avere uno stato per ogni possibile n-esimo errore che si può fare
 - Al termine dell'erogazione si riparte dallo stato iniziale
 * - Se BLOCCO_BANCOMAT == 1 si entra in uno stato di blocco (in loop)
+- Se il BANCOMAT viene tolto durante una qualsiasi operazione torno allo stato iniziale (reset)
