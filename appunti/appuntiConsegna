@@ -1,0 +1,41 @@
+INPUTS:
+• BANCOMAT_INSERITO (1 bit)
+• CODICE (4 bit)
+• CASH_RICHIESTO (10 bit) - range [0 .. 1023]
+• CASH_DISPONIBILE (16 bit) - range [0 .. 65535]
+
+OUTPUTS:
+• REINSERIRE_CODICE (1 bit)
+• ABILITAZIONE_EROGAZIONE (1 bit)
+• BLOCCO_BANCOMAT (1 bit)
+• CASH_DA_EROGARE (10bit)
+
+SEGNALI INTERNI:
+• CHECK_DISPONIBILITA (1 bit)
+• CASH_OK (1 bit)
+
+- Se BANCOMAT_INSERITO:
+    - 1: Inizia a riconoscere CODICE 
+        Dopodiché BANCOMAT_INSERITO don't care (dc)
+    - 0: tutti gli OUTPUTS a 0
+- CODICE è un intero di 3 cifre [0 .. 9] inserite in istanti consecutivi; ogni cifra è codificata con 4 bit
+- Valore di CODICE da riconoscere: 5 5 0 ovvero 0101 0101 
+- CASH_RICHIESTO ha range [0 .. 1023], codificato con 10 bit 
+- CASH_DISPONIBILE ha range [0 .. 65535], codificato con 16 bit
+- Se CODICE == 5 5 0 si legge CASH_RICHIESTO
+    - Se CODICE == 5 5 0 si legge CHECK_DISPONIBILITA
+        - Se CASH_RICHIESTO < CASH_DISPONIBILE/4
+            - 1: CASH_OK = 1, ABILITAZIONE_EROGAZIONE = 1, CASH_DA_EROGARE = CASH_RICHIESTO
+            - 0: CASH_OK = 0, ABILITAZIONE_EROGAZIONE = 0, CASH_DA_EROGARE = 0
+- Se CODICE != 5 5 0:
+    - 1: REINSERIRE_CODICE = 1, "errori++"
+    - 0: "errori = 0"
+- Se "errori == 3":
+    - BLOCCO_BANCOMAT = 1
+    
+
+Osservazioni:
+
+- CODICE deve avere uno stato per ogni possibile n-esimo errore che si può fare
+- Al termine dell'erogazione si riparte dallo stato iniziale
+* - Se BLOCCO_BANCOMAT == 1 si entra in uno stato di blocco (in loop)
