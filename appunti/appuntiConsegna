@@ -38,4 +38,5 @@ Osservazioni:
 - CODICE deve avere uno stato per ogni possibile n-esimo errore che si può fare
 - Al termine dell'erogazione si riparte dallo stato iniziale
 * - Se BLOCCO_BANCOMAT == 1 si entra in uno stato di blocco (in loop)
-- Se il BANCOMAT viene tolto durante una qualsiasi operazione torno allo stato iniziale (reset)
+- Dopo aver inserito il BANCOMAT : BANCOMAT_INSERITO don't care
+- Se la disponibilità è verificata si torna allo stato iniziale
