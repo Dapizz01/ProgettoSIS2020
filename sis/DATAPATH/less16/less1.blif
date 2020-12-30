@@ -1,0 +1,23 @@
+.model less1
+.inputs a b c
+.outputs o
+
+.names a b c o
+001 1
+01- 1
+111 1
+
+# tabella verità
+
+# a b c | o
+# 0 0 0 | 0
+# 0 0 1 | 1
+# 0 1 0 | 1
+# 0 1 1 | 1
+# 1 0 0 | 0
+# 1 0 1 | 0
+# 1 1 0 | 0
+# 1 1 1 | 1
+
+# ragionamento: se a==b allora o=c; se a<b o=1; se a>b o=0;
+# c è il risultato del minore della cifra a dx
