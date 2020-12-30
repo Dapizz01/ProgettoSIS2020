@@ -1,0 +1,10 @@
+Componenti da fare:
+    - Shifter 2 DX (I:16 bit)
+    - Minore (I:16 bit)
+    - Multiplexer 2 vie (I:10 bit)
+
+https://www.guru99.com/linux-redirection.html
+
+https://stackoverflow.com/questions/10076741/how-to-redirect-standard-input-and-output-with-bash
+
+sis 2>&1 | tee testLog.txt

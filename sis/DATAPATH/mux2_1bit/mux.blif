@@ -1,0 +1,9 @@
+.model mux
+.inputs sel i1 i0
+.outputs o
+
+.names sel i1 i0 o
+11- 1
+0-1 1
+
+.end
