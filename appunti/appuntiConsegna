@@ -13,6 +13,8 @@ OUTPUTS:
 SEGNALI INTERNI:
 • CHECK_DISPONIBILITA (1 bit)
 • CASH_OK (1 bit)
+° INC_ERR (1 bit)
+° 3_ERR (1 bit)
 
 - Se BANCOMAT_INSERITO:
     - 1: Inizia a riconoscere CODICE 
@@ -35,7 +37,8 @@ SEGNALI INTERNI:
 
 Osservazioni:
 
-- CODICE ha uno stato per ogni possibile n-esimo errore che si può fare
+- REINSERIRE_CODICE viene valorizzato ad 1 solo se tutte e 3 le cifre del CODICE sono inserite.
+- Nella FSM è effettuato il controllo di correttezza di CODICE ed il conteggio del numero di cifre inserite, mentre nel Datapath viene memorizzato il numero di tentativi effettuati
 * - Se BLOCCO_BANCOMAT == 1 si entra in uno stato di blocco (in loop)
 - Se CHECK_DISPONIBILITA è verificato si torna allo stato iniziale (ovvero al termine dell'erogazione)
 - Dopo aver inserito il BANCOMAT : 
