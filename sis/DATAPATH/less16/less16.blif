@@ -22,4 +22,4 @@
 .subckt less1 a=a15 b=b15 c=c14 o=o
 
 .search ../const0/const0.blif
-.search ./less1.blif
+.search ./less1_minimized.blif

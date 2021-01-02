@@ -1,0 +1,8 @@
+.model less1
+.inputs a b c
+.outputs o
+.names a b c o
+01- 1
+0-1 1
+-11 1
+.end
