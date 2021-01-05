@@ -1,0 +1,9 @@
+.model equal_2bit
+.inputs a1 a0 b1 b0
+.outputs o
+.names a1 a0 b1 b0 o
+1111 1
+0101 1
+1010 1
+0000 1
+.end

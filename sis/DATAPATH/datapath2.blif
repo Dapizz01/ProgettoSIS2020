@@ -1,0 +1,26 @@
+.model datapath2
+.inputs inc_err reset_err
+.outputs tre_err
+
+# X -> nodi in uscita dal primo mux
+# Y -> nodi in uscita dall'adder
+# Z -> nodi in uscita dal secondo mux
+# T -> nodi in uscita dal registro
+
+.subckt const0 o=ZERO
+.subckt const1 o=UNO
+.subckt mux2_2bit sel=inc_err a1=ZERO a0=UNO b1=ZERO b0=ZERO o1=X1 o0=X0
+.subckt adder_2bit a1=X1 a0=X0 b1=T1 b0=T0 o1=Y1 o0=Y0 
+.subckt mux2_2bit sel=reset_err a1=ZERO a0=ZERO b1=Y1 b0=Y0 o1=Z1 o0=Z0
+.subckt registro_2bit a=Z1 b=Z0 o1=T1 o0=T0
+.subckt equal_2bit a1=T1 a0=T0 b1=UNO b0=UNO o=tre_err
+
+
+.search ./adder_2bit/adder_2bit_minimized.blif
+.search ./const0/const0.blif
+.search ./const1/const1.blif
+.search ./equal_2bit/equal_2bit_minimized.blif
+.search ./mux2_2bit/mux2_2bit_minimized.blif
+.search ./registro_2bit/registro_2bit_minimized.blif
+
+.end

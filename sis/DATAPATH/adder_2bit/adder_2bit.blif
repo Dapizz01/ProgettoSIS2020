@@ -1,0 +1,13 @@
+.model adder_2bit
+.inputs a1 a0 b1 b0
+.outputs o1 o0
+
+# nessun riporto in uscita
+# X = riporto intermedio
+
+.subckt const0 o=ZERO
+.subckt adder_1bit a=a0 b=b0 cin=ZERO o=o0 cout=X
+.subckt adder_1bit a=a1 b=b1 cin=X o=o1
+
+.search ../const0/const0.blif
+.search adder_1bit_minimized.blif

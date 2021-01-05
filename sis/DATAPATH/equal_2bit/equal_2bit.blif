@@ -1,0 +1,9 @@
+.model equal_2bit
+.inputs a1 a0 b1 b0
+.outputs o # 0 -> NON sono uguali, 1 -> sono uguali
+
+.names a1 a0 b1 b0 o
+0000 1
+0101 1
+1010 1
+1111 1

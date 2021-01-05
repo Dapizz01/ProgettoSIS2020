@@ -1,0 +1,10 @@
+.model mux2_2bit
+.inputs sel a1 a0 b1 b0
+.outputs o1 o0
+.names sel a1 b1 o1
+11- 1
+0-1 1
+.names sel a0 b0 o0
+11- 1
+0-1 1
+.end

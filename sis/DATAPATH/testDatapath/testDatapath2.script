@@ -1,0 +1,10 @@
+# test tutti input a 0
+simulate 0 0
+
+# test fino a 3
+simulate 1 0
+simulate 1 0
+simulate 1 0
+
+# reset
+simulate 0 1

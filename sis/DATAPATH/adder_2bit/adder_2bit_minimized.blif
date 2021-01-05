@@ -1,0 +1,17 @@
+.model adder_2bit
+.inputs a1 a0 b1 b0
+.outputs o1 o0
+.names a1 a0 b1 b0 [7] [14] o1
+----01 1
+-1-10- 1
+1111-- 1
+.names a0 b0 o0
+01 1
+10 1
+.names a1 a0 b1 b0 [14] [7]
+1-1-- 1
+-1-11 1
+.names a1 b1 [14]
+1- 1
+-1 1
+.end

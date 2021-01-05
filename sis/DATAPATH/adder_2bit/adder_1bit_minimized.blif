@@ -1,0 +1,14 @@
+.model adder_1bit
+.inputs a b cin
+.outputs o cout
+.names a b cin cout [4] o
+--10- 1
+---01 1
+111-- 1
+.names a b cin [4] cout
+11-- 1
+--11 1
+.names a b [4]
+1- 1
+-1 1
+.end

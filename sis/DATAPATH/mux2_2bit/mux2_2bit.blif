@@ -1,0 +1,8 @@
+.model mux2_2bit
+.inputs sel a1 a0 b1 b0
+.outputs o1 o0
+
+.subckt mux2_1bit sel=sel i1=a1 i0=b1 o=o1
+.subckt mux2_1bit sel=sel i1=a0 i0=b0 o=o0 
+
+.search ../mux2_1bit/mux2_1bit_minimized.blif

@@ -1,0 +1,15 @@
+.model registro_2bit
+.inputs a b
+.outputs o1 o0
+
+# --------
+# | a  b |
+# --------
+#   |  |  
+#   v  v
+#   o1 o0
+
+.subckt registro_1bit a=a o=o1
+.subckt registro_1bit a=b o=o0
+
+.search registro_1bit_minimized.blif

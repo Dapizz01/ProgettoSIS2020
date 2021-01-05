@@ -1,0 +1,5 @@
+# sel=1, a=10, b=01
+simulate 1 1 0 0 1
+
+# sel=0, a=10, b=01
+simulate 0 1 0 0 1

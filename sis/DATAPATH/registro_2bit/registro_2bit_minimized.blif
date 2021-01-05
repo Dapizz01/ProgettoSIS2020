@@ -1,0 +1,6 @@
+.model registro_2bit
+.inputs a b
+.outputs o1 o0
+.latch    a o1 as NIL 0
+.latch    b o0 as NIL 0
+.end

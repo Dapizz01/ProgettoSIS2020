@@ -1,8 +1,12 @@
 Componenti da fare:
-    - Shifter 2 DX (I:16 bit)
-    - Minore (I:16 bit)
-    - Multiplexer 2 vie (I:10 bit)
-    - Multiplecer 2 vie (I: 2 bit)
+Datapath 1:
+    - Shifter 2 DX (I:16 bit)       X
+    - Minore (I:16 bit)             X
+    - Multiplexer 2 vie (I:10 bit)  X
+    - Multiplexer 2 vie (I:1 bit)   X
+
+Datapath 2:
+    - Multiplexer 2 vie (I: 2 bit)
     - Sommatore 2 bit
     - Comparatore 2 bit
     - Registro 2 bit
