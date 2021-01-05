@@ -6,16 +6,14 @@
 # Y = uscita di minore
 
 .subckt const0 o=ZERO
-.subckt shift_dx i15=cd15 i14=cd14 i13=cd13 i12=c12 i11=cd11 i10=cd10 i9=cd9 i8=cd8 i7=cd7 i6=cd6 i5=cd5 i4=cd4 i3=cd3 i2=cd2 i1=cd1 i0=cd0 o15=X15 o14=X14 o13=X13 o12=X12 o11=X11 o10=X10 o9=C9 o8=C8 o7=X7 o6=X6 o5=X5 o4=X4 o3=X3 o2=X2 o1=X1 o0=X0
+.subckt shifter2_dx i15=cd15 i14=cd14 i13=cd13 i12=cd12 i11=cd11 i10=cd10 i9=cd9 i8=cd8 i7=cd7 i6=cd6 i5=cd5 i4=cd4 i3=cd3 i2=cd2 i1=cd1 i0=cd0 o15=X15 o14=X14 o13=X13 o12=X12 o11=X11 o10=X10 o9=X9 o8=X8 o7=X7 o6=X6 o5=X5 o4=X4 o3=X3 o2=X2 o1=X1 o0=X0
 .subckt less16 a15=ZERO a14=ZERO a13=ZERO a12=ZERO a11=ZERO a10=ZERO a9=cr9 a8=cr8 a7=cr7 a6=cr6 a5=cr5 a4=cr4 a3=cr3 a2=cr2 a1=cr1 a0=cr0 b15=X15 b14=X14 b13=X13 b12=X12 b11=X11 b10=X10 b9=X9 b8=X8 b7=X7 b6=X6 b5=X5 b4=X4 b3=X3 b2=X2 b1=X1 b0=X0 o=Y
 .subckt mux2_1bit sel=checkD i1=Y i0=ZERO o=cashOK
-.subckt mux10_1bit sel=cashOK a9=cr9 a8=cr8 a7=cr7 a6=cr6 a5=cr5 a4=cr4 a3=cr3 a2=cr2 a1=cr1 a0=cr0 b9=ZERO b8=ZERO b7=ZERO b6=ZERO b5=ZERO b4=ZERO b3=ZERO b2=ZERO b1=ZERO b0=ZERO o9=ce9 o8=ce8 o7=ce7 o6=ce6 o5=ce5 o4=ce4 o3=ce3 o2=ce2 o1=ce1 o0=ce0
+.subckt mux2_10bit sel=cashOK a9=cr9 a8=cr8 a7=cr7 a6=cr6 a5=cr5 a4=cr4 a3=cr3 a2=cr2 a1=cr1 a0=cr0 b9=ZERO b8=ZERO b7=ZERO b6=ZERO b5=ZERO b4=ZERO b3=ZERO b2=ZERO b1=ZERO b0=ZERO o9=ce9 o8=ce8 o7=ce7 o6=ce6 o5=ce5 o4=ce4 o3=ce3 o2=ce2 o1=ce1 o0=ce0
 
 
 .search ./const0/const0.blif
 .search ./less16/less16_minimized.blif
-.search ./mux2_1bit/mux_minimized.blif
-.search ./mux2_10bit/mux_10bit_minimized.blif
-.search ./shifter_dx/shifter_dx_minimized.blif
-
-.end
+.search ./mux2_1bit/mux2_1bit_minimized.blif
+.search ./mux2_10bit/mux2_10bit_minimized.blif
+.search ./shifter2_dx/shifter2_dx_minimized.blif

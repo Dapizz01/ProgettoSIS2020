@@ -1,4 +1,4 @@
-.model mux
+.model mux2_1bit
 .inputs sel i1 i0
 .outputs o
 .names sel i1 i0 o
