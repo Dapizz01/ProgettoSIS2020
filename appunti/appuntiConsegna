@@ -44,5 +44,7 @@ Osservazioni:
 - Dopo aver inserito il BANCOMAT : 
     1.BANCOMAT_INSERITO don't care 
     2.ll BANCOMAT una volta inserito non controlliamo più se è ancora all'interno  
-    3.Non è più possibile rimuovere il BANCOMAT senza effettuare un prelievo (anceh da 0 euro)
+    3.Non è più possibile rimuovere il BANCOMAT senza effettuare un prelievo (anche da 0 euro)
 - La divisione nel calcolo del CASH_DISPONIBILE è fatta per difetto
+
+- DA SISTEMARE -> bisogna resettare il contatore di errori dopo che l'utente ha inserito un codice corretto
