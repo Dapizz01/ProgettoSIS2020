@@ -47,4 +47,5 @@ Osservazioni:
     3.Non è più possibile rimuovere il BANCOMAT senza effettuare un prelievo (anche da 0 euro)
 - La divisione nel calcolo del CASH_DISPONIBILE è fatta per difetto
 
-- DA SISTEMARE -> datapath2.blif
+- DA SISTEMARE -> stg con cambio nome dei nodi (A -> ins_banc) e cambio eventuali nomi dei nodi (es A -> nessun bancomat inserito
+    B-> bancomat inserito transazione da b ad a è inseirimento bancomat), datapath,  

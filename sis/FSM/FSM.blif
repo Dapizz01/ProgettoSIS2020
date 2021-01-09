@@ -11,60 +11,61 @@
 .p 576       # Number of state transitions (2^inputs_number * states_number)
 .r A         # Name of the reset state
 
-# Nomi stati:   (significato)
-# A = ins_banc  (inserimento bancomat)
-# B = cif1      (inserimento prima cifra)
-# C = cif2      (inserimento seconda cifra)
-# D = cif3      (inserimento terza cifra)
-# E = cod_ok    (codice inserito valido)
-# F = cif1_err  (prima cifra inserita errata, inserimento seconda cifra)
-# G = cif2_err  (prima e/o seconda cifra errate, inserimento terza cifra)
-# H = cif3_err  (prima e/o seconda e/o terza cifra errate, controllo tre_err)
-# L = BLC       (blocco bancomat)
+# Nomi stati:       (significato)
+# A = NO_BANC       (bancomat non ancora inserito = stato iniziale(reset))
+# B = BANC_INS      (bancomat inserito, 0 cifre inserite)
+# C = CIF1          (1° cifra giusta inserita)
+# D = CIF2          (2° cifra giusta inserita)
+# E = CIF3          (3° cifra giusta inserita)
+# F = CIF1_ERR      (1° cifra inserita errata)
+# G = CIF2_ERR      (1° e/o 2° cifra giusta inserita)
+# H = CIF3_ERR      (1° e/o 2° e/o 3° cifra giusta inserita)
+# L = BLC           (codice errato inserito 3 volte, blocco del bancomat)
 
 
-# Tabella delle transizioni
+# Tabella delle transizioni  # significato delle tranzioni
 
-# A
-0------ A A 000000
-1------ A B 000001
+# A -> NO_BANC
+0------ A A 000000 # il bancomat continua a non venir inserito (bancomat_inserito = 0)
+1------ A B 000001 # bancomat inserito (bancomat_inserito = 1, reset_err = 1)
 
-# B
--0101-- B C 000000
--1----- B F 000010
---0---- B F 000010
----1--- B F 000010
-----0-- B F 000010
+# B -> BANC_INS
+-0101-- B C 000000 # la 1° cifra inserita è quella corretta, ovvero 5 (0101)
+-1----- B F 000010 # la 1° cifra NON è corretta (inc_err = 1)
+--0---- B F 000010 # la 1° cifra NON è corretta (inc_err = 1)
+---1--- B F 000010 # la 1° cifra NON è corretta (inc_err = 1)
+----0-- B F 000010 # la 1° cifra NON è corretta (inc_err = 1)
 
-# C
--0101-- C D 000000
--1----- C G 000010
----1--- C G 000010
-----0-- C G 000010
+# C -> CIF1
+-0101-- C D 000000 # la 2° cifra inserita è quella corretta, ovvero 5 (0101)
+-1----- C G 000010 # la 2° cifra NON è corretta (inc_err = 1)
+--0---- C G 000010 # la 2° cifra NON è corretta (inc_err = 1)
+---1--- C G 000010 # la 2° cifra NON è corretta (inc_err = 1)
+----0-- C G 000010 # la 2° cifra NON è corretta (inc_err = 1)
 
-# D
--0000-- D E 000101
--1----- D H 000010
---1---- D H 000010
----1--- D H 000010
-----1-- D H 000010
+# D -> CIF2
+-0000-- D E 000101 # la 3° cifra inserita è quella corretta, ovvero 0 (0000) (checkD = 1, reset_err = 1)
+-1----- D H 000010 # la 3° cifra NON è corretta (inc_err = 1)
+--1---- D H 000010 # la 3° cifra NON è corretta (inc_err = 1)
+---1--- D H 000010 # la 3° cifra NON è corretta (inc_err = 1)
+----1-- D H 000010 # la 3° cifra NON è corretta (inc_err = 1)
 
-# E
------1- E A 010000
------0- E A 000000
+# E -> CIF3
+-----1- E A 010000 # il cash richiesto è MINORE di 1/4 del cash disponibile (cashOK = 1, abilitazione_erog = 1) 
+-----0- E A 000000 # il cash richiesto è MAGGIORE di 1/4 del cash disponibile (cashOK = 0, abilitazione_erog = 0)
 
-# F 
-------- F G 000000
+# F -> CIF1_ERR
+------- F G 000000 # viene inserita la 2° cifra, e il codice errato
 
-# G
-------- G H 000000
+# G -> CIF2_ERR
+------- G H 000000 # viene inserita la 3° cifre, e il codice errato
 
-# H
-------0 H B 100000
-------1 H L 001000
+# H -> CIF3_ERR
+------0 H B 100000 # non sono stati ancora fatti 3 errori (tre_err = 0)
+------1 H L 001000 # sono stati fatti 3 errori di inserimento del codice (tre_err = 1)
 
-# L
-------- L L 001000
+# L -> BLC   
+------- L L 001000 # il bancomat rimane bloccato (blocco_bancomat = 1)
 
 .end_kiss
 
