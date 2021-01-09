@@ -1,0 +1,71 @@
+.model FSM
+.inputs bancomat_inserito cod3 cod2 cod1 cod0 cashOK tre_err
+.outputs reinserire_cod abilitazione_erog blocco_bancomat checkD inc_err reset_err
+
+# -- Descrizione FSM -- #
+.start_kiss
+
+.i 7         # Number of inputs
+.o 6         # Number of outputs
+.s 9         # Number of states
+.p 576       # Number of state transitions (2^inputs_number * states_number)
+.r A         # Name of the reset state
+
+# Nomi stati:   (significato)
+# A = ins_banc  (inserimento bancomat)
+# B = cif1      (inserimento prima cifra)
+# C = cif2      (inserimento seconda cifra)
+# D = cif3      (inserimento terza cifra)
+# E = cod_ok    (codice inserito valido)
+# F = cif1_err  (prima cifra inserita errata, inserimento seconda cifra)
+# G = cif2_err  (prima e/o seconda cifra errate, inserimento terza cifra)
+# H = cif3_err  (prima e/o seconda e/o terza cifra errate, controllo tre_err)
+# L = BLC       (blocco bancomat)
+
+
+# Tabella delle transizioni
+
+# A
+0------ A A 000000
+1------ A B 000001
+
+# B
+-0101-- B C 000000
+-1----- B F 000010
+--0---- B F 000010
+---1--- B F 000010
+----0-- B F 000010
+
+# C
+-0101-- C D 000000
+-1----- C G 000010
+---1--- C G 000010
+----0-- C G 000010
+
+# D
+-0000-- D E 000101
+-1----- D H 000010
+--1---- D H 000010
+---1--- D H 000010
+----1-- D H 000010
+
+# E
+-----1- E A 010000
+-----0- E A 000000
+
+# F 
+------- F G 000000
+
+# G
+------- G H 000000
+
+# H
+------0 H B 100000
+------1 H L 001000
+
+# L
+------- L L 001000
+
+.end_kiss
+
+.end

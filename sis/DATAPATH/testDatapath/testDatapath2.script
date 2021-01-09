@@ -1,10 +1,16 @@
 # test tutti input a 0
 simulate 0 0
 
-# test fino a 3
+# test fino a 3 ( inc_err=1, reset_err=0 )
 simulate 1 0
 simulate 1 0
 simulate 1 0
+simulate 0 0
+simulate 0 0
 
-# reset
+# reset ( inc_err=0, reset_err=1 )
 simulate 0 1
+
+# incremento + incremento e reset
+# simulate 1 0
+# simulate 1 1
