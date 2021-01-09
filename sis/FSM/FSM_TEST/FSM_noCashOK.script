@@ -1,0 +1,19 @@
+# CODIFICA
+# bancomat_inserito cod3 cod2 cod1 cod0 cashOK tre_err
+
+# nota: tutti i DC in input sono scritti come 0
+
+# inseirimento bancomat
+simulate 1 0 0 0 0 0 0
+
+# inserimento prima cifra
+simulate 0 0 1 0 1 0 0
+
+# inserimento seconda cifra corretta
+simulate 0 0 1 0 1 0 0
+
+# inserimento terza cifra corretta
+simulate 0 0 0 0 0 0 0
+
+# cashOK = 0
+simulate 0 0 0 0 0 0 0

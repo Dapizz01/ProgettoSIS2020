@@ -61,8 +61,8 @@
 ------- G H 000000 # viene inserita la 3° cifre, e il codice errato
 
 # H -> CIF3_ERR
-------0 H B 100000 # non sono stati ancora fatti 3 errori (tre_err = 0)
-------1 H L 001000 # sono stati fatti 3 errori di inserimento del codice (tre_err = 1)
+------0 H B 100000 # non sono stati ancora fatti 3 errori (tre_err = 0, reinserire_cod = 1) 
+------1 H L 001000 # sono stati fatti 3 errori di inserimento del codice (tre_err = 1, blocco_bancomat = 1)
 
 # L -> BLC   
 ------- L L 001000 # il bancomat rimane bloccato (blocco_bancomat = 1)
