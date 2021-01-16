@@ -1,0 +1,79 @@
+.model DATAPATH
+.inputs cr9 cr8 cr7 cr6 cr5 cr4 cr3 cr2 cr1 cr0 cd15 cd14 cd13 cd12 cd11 cd10 \
+cd9 cd8 cd7 cd6 cd5 cd4 cd3 cd2 cd1 cd0 checkD inc_err reset_err
+.outputs ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 cashOK tre_err
+.latch    Z1 T1 as NIL 0
+.latch    Z0 T0 as NIL 0
+.names cashOK cr9 ce9
+11 1
+.names cashOK cr8 ce8
+11 1
+.names cashOK cr7 ce7
+11 1
+.names cashOK cr6 ce6
+11 1
+.names cashOK cr5 ce5
+11 1
+.names cashOK cr4 ce4
+11 1
+.names cashOK cr3 ce3
+11 1
+.names cashOK cr2 ce2
+11 1
+.names cashOK cr1 ce1
+11 1
+.names cashOK cr0 ce0
+11 1
+.names cr9 cd15 cd14 cd13 cd12 cd11 checkD c8 cashOK
+-1----1- 1
+--1---1- 1
+---1--1- 1
+----1-1- 1
+0----11- 1
+0-----11 1
+-----111 1
+.names T1 T0 tre_err
+11 1
+.names inc_err reset_err tre_err T1 T0 Z1
+00-1- 1
+-001- 1
+100-1 1
+.names inc_err reset_err T0 Z0
+001 1
+100 1
+.names cr8 cr7 cd10 cd9 c6 [46] c8
+0-1--- 1
+0--11- 1
+--111- 1
+00---1 1
+-01--1 1
+.names cr6 cr5 cd8 cd7 c4 [47] c6
+0-1--- 1
+0--11- 1
+--111- 1
+00---1 1
+-01--1 1
+.names cr2 cr1 cr0 cd4 cd3 cd2 c2
+0--1-- 1
+00--1- 1
+-0-11- 1
+000--1 1
+-001-1 1
+0-0-11 1
+--0111 1
+.names cr4 cr3 cd6 cd5 c2 [48] c4
+0-1--- 1
+0--11- 1
+--111- 1
+00---1 1
+-01--1 1
+.names cd9 c6 [46]
+1- 1
+-1 1
+.names cd7 c4 [47]
+1- 1
+-1 1
+.names cd5 c2 [48]
+1- 1
+-1 1
+.end

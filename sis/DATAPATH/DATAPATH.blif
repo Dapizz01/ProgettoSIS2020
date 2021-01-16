@@ -8,3 +8,4 @@
 .search datapath1_minimized.blif
 .search datapath2_minimized.blif
 
+.end

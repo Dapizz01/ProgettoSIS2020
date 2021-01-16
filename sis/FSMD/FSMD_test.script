@@ -1,0 +1,57 @@
+# test con tutti gli input corretti, bancomat_inserito 1, cod 550, richiesto 100, disponibile 500
+
+# CODIFICA
+# bancomat_inserito cod3 cod2 cod1 cod0 cr9 cr8 cr7 cr6 cr5 cr4 cr3 cr2 cr1 cr0 cd15 cd14 cd13 cd12 cd11 cd10 cd9 cd8 cd7 cd6 cd5 cd4 cd3 cd2 cd1 cd0
+
+# note: 
+# 1 -> tutti i DC in input sono scritti come 0
+# 2 -> cash_richiesto e disponibile sono sempre inseriti, così si verifica che non vengano erogati soldi fino a dopo l'inserimento del codice 
+
+# 100: 0 0 0 1 1 0 0 1 0 0 ||| 500: 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+
+
+
+
+# inserimento bancomat
+#                  |--------100------| |-----------500---------------|
+simulate 1 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+
+# inserimento prima cifra corretta
+#          |--5--|
+simulate 0 0 1 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+
+#inserimento seconda cifra corretta
+#          |--5--|
+simulate 0 0 1 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+
+#inserimento terza cifra corretta
+#          |--0--|
+simulate 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+
+# cash richiesto < 1/4 cash disponibile
+#                  |--------100------| |-----------500---------------|
+simulate 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+
+
+#RISULTATO:
+# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0
+# NEXT STATE: reinserire_cod abilitazione_erog blocco_bancomat checkD inc_err reset_err
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+Next state: 100100
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+Next state: 000100
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+Next state: 010100
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+Next state: 001100
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+Next state: 100000
