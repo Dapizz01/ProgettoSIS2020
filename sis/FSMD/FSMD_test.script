@@ -14,44 +14,45 @@
 
 # inserimento bancomat
 #                  |--------100------| |-----------500---------------|
-simulate 1 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+simulate 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
 # inserimento prima cifra corretta
 #          |--5--|
-simulate 0 0 1 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+simulate 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
 #inserimento seconda cifra corretta
 #          |--5--|
-simulate 0 0 1 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+simulate 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
 #inserimento terza cifra corretta
 #          |--0--|
-simulate 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
 # cash richiesto < 1/4 cash disponibile
 #                  |--------100------| |-----------500---------------|
-simulate 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
 
 #RISULTATO:
 # OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0
 # NEXT STATE: reinserire_cod abilitazione_erog blocco_bancomat checkD inc_err reset_err
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
-Next state: 100100
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
-Next state: 000100
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 000000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
-Next state: 010100
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 110000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
-Next state: 001100
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 110100
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
-Next state: 100000
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 1 1 0 0 1 0 0
+#Next state: 101100
+
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 000100

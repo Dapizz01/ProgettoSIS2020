@@ -1,3 +1,8 @@
+# INPUTS
+# cr9 cr8 cr7 cr6 cr5 cr4 cr3 cr2 cr1 cr0 cd15 cd14 cd13 cd12 cd11 cd10 cd9 cd8 cd7 cd6 cd5 cd4 cd3 cd2 cd1 cd0 checkD inc_err reset_err
+# OUTPUTS
+# ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 cashOK tre_err
+
 # richiesto = 100, disponibile 500, inc_err=0, reset_err=0, dovrebbe essere ok, checkD vero, 3_err falso 
-  simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0 1 0 
-    #OUT:  0 0 0 1 1 0 0 1 0 0 #cashOK=1 #3_err=0
+simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0 1 0 0
+    #OUT:  0 0 0 1 1 0 0 1 0 0 1 0 #cashOK=1 #3_err=0
