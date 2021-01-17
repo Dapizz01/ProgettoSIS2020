@@ -1,6 +1,6 @@
 .model FSMD
 .inputs bancomat_inserito cod3 cod2 cod1 cod0 cr9 cr8 cr7 cr6 cr5 cr4 cr3 cr2 cr1 cr0 cd15 cd14 cd13 cd12 cd11 cd10 cd9 cd8 cd7 cd6 cd5 cd4 cd3 cd2 cd1 cd0
-.outputs reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0
+.outputs reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 A B C D E # Da rimuovere
 
 # INPUTS:                              DENOMINAZIONE
 # BANCOMAT_INSERITO (1 bit)             bancomat_inserito
@@ -15,14 +15,23 @@
 # CASH_DA_EROGARE (10bit)               [ce9 .. ce0]
 
 # NODI INTERMEDI
-# A = cashOK       (DATAPATH -> FSM)
+# A = cashOK        (DATAPATH -> FSM)
 # B = tre_err       (DATAPATH -> FSM)
 # C = checkD        (FSM -> DATAPATH)
 # D = inc_err       (FSM -> DATAPATH)
 # E = reset_err     (FSM -> DATAPATH)
 
-.subckt DATAPATH cr9=cr9 cr8=cr8 cr7=cr7 cr6=cr6 cr5=cr5 cr4=cr4 cr3=cr3 cr2=cr2 cr1=cr1 cr0=cr0 cd15=cd15 cd14=cd14 cd13=cd13 cd12=cd12 cd11=cd11 cd10=cd10 cd9=cd9 cd8=cd8 cd7=cd7 cd6=cd6 cd5=cd5 cd4=cd4 cd3=cd3 cd2=cd2 cd1=cd1 cd0=cd0 checkD=C inc_err=D reset_err=E ce9=ce9 ce8=ce8 ce7=ce7 ce6=ce6 ce5=ce5 ce4=ce4 ce3=ce3 ce2=ce2 ce1=ce1 ce0=ce0 cashOK=A tre_err=B
+# FUNZIONA:
+    # Nodi intermedi
+    # cashErogato
+    # Conteggio errori
+    # Transizion degli stati
+# MANCA:
+    # abilitazione
+
+# ATTENZIONE! Bisogna fare un giro di clock a vuoto per passare da H a B!!!
 .subckt FSM bancomat_inserito=bancomat_inserito cod3=cod3 cod2=cod2 cod1=cod1 cod0=cod0 cashOK=A tre_err=B reinserire_cod=reinserire_cod abilitazione_erog=abilitazione_erog blocco_bancomat=blocco_bancomat checkD=C inc_err=D reset_err=E
+.subckt DATAPATH cr9=cr9 cr8=cr8 cr7=cr7 cr6=cr6 cr5=cr5 cr4=cr4 cr3=cr3 cr2=cr2 cr1=cr1 cr0=cr0 cd15=cd15 cd14=cd14 cd13=cd13 cd12=cd12 cd11=cd11 cd10=cd10 cd9=cd9 cd8=cd8 cd7=cd7 cd6=cd6 cd5=cd5 cd4=cd4 cd3=cd3 cd2=cd2 cd1=cd1 cd0=cd0 checkD=C inc_err=D reset_err=E ce9=ce9 ce8=ce8 ce7=ce7 ce6=ce6 ce5=ce5 ce4=ce4 ce3=ce3 ce2=ce2 ce1=ce1 ce0=ce0 cashOK=A tre_err=B
 
 .search ../DATAPATH/DATAPATH_minimized.blif
 .search ../FSM/FSM_minimized.blif

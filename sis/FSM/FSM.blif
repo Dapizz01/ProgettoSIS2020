@@ -5,11 +5,16 @@
 # -- Descrizione FSM -- #
 .start_kiss
 
-.i 7         # Number of inputs
-.o 6         # Number of outputs
-.s 9         # Number of states
-.p 576       # Number of state transitions (2^inputs_number * states_number)
-.r A         # Name of the reset state
+# Number of inputs
+.i 7
+# Number of outputs
+.o 6
+# Number of states
+.s 9
+# Number of state transitions (2^inputs_number * states_number)
+.p 576
+# Name of the reset state
+.r A
 
 # Nomi stati:       (significato)
 # A = NO_BANC       (bancomat non ancora inserito = stato iniziale(reset))
