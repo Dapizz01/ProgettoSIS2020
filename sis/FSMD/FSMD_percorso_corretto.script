@@ -28,7 +28,7 @@ simulate 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 #          |--0--|
 simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
-# cash richiesto < 1/4 cash disponibile
+# clock a vuoto (D -> E)       cash richiesto < 1/4 cash disponibile 
 #                  |--------100------| |-----------500---------------|
 simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
