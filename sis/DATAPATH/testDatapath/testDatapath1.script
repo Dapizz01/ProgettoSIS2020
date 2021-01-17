@@ -1,14 +1,16 @@
 # richiesto = 100, disponibile 500, dovrebbe essere ok, checkD vero, PASSATO
   simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0 1
+# clock a vuoto
+  simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0 1
 
 # richiesto = 100, disponibile 400, NON dovrebbe essere ok, checkD falso, PASSATO
-  simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0
+  # simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0
 
 # richiesto = 100, disponibile 400, NON dovrebbe essere ok, checkD vero, PASSATO
-  simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1
+  # simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1
 
 # richiesto = 100, disponibile 401, NON dovrebbe essere ok, checkD vero, PASSATO
-  simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 1 1  
+  # simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 1 1  
 
 # richiesto = 100, disponibile 404, dovrebbe essere ok, checkD vero, PASSATO
-  simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 1 0 0 1
+  # simulate 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 1 0 0 1

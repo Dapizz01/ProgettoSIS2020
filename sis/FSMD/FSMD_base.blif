@@ -26,8 +26,7 @@
     # cashErogato
     # Conteggio errori
     # Transizion degli stati
-# MANCA:
-    # abilitazione
+    # abilitazione erogazione
 
 # ATTENZIONE! Bisogna fare un giro di clock a vuoto per passare da H a B!!!
 .subckt FSM bancomat_inserito=bancomat_inserito cod3=cod3 cod2=cod2 cod1=cod1 cod0=cod0 cashOK=A tre_err=B reinserire_cod=reinserire_cod abilitazione_erog=abilitazione_erog blocco_bancomat=blocco_bancomat checkD=C inc_err=D reset_err=E

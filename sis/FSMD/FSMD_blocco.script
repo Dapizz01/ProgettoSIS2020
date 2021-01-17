@@ -70,7 +70,7 @@ simulate 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 # RISULTATO:
 # OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 A B C D E
-# NEXT STATE: ct_err1 ct_err0 st3 st2 st1 st0
+# NEXT STATE: ct_err1 ct_err0 minore st3 st2 st1 st0
 # A 0001
 # B 0000
 # C 1100
@@ -83,58 +83,59 @@ simulate 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 ################
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 # stato prossimo B
-Next state: 000000
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 # stato prossimo B
+#Next state: 0000000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 # stato prossimo F
-Next state: 011000
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 # stato prossimo F
+#Next state: 0101000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo G
-Next state: 011001
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo G
+#Next state: 0101001
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo H
-Next state: 011111
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo H
+#Next state: 0101111
 
-Network simulation:
-Outputs: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo B
-Next state: 010000
+#Network simulation:
+#Outputs: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo B
+#Next state: 0100000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 # stato prossimo F
-Next state: 101000
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 # stato prossimo F
+#Next state: 1001000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo G
-Next state: 101001
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo G
+#Next state: 1001001
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo H
-Next state: 101111
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo H
+#Next state: 1001111
 
-Network simulation:
-Outputs: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo B
-Next state: 100000
+àNetwork simulation:
+#Outputs: 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 # stato prossimo B
+#Next state: 1000000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 # stato prossimo F
-Next state: 111000
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 # stato prossimo F
+#Next state: 1101000
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo G
-Next state: 111001
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo G
+#Next state: 1101001
 
-Network simulation:
-Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo H
-Next state: 111111
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo H
+#Next state: 1101111
 
-Network simulation:
-Outputs: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo L
-Next state: 110010
+#Network simulation:
+#Outputs: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo L
+#Next state: 1100010
 
-Network simulation:
-Outputs: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo L
-Next state: 110010
+#Network simulation:
+#Outputs: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 # stato prossimo L
+#Next state: 1100010
+
