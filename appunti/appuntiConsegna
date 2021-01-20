@@ -38,8 +38,9 @@ SEGNALI INTERNI:
 Osservazioni:
 
 - REINSERIRE_CODICE viene valorizzato ad 1 solo se tutte e 3 le cifre del CODICE sono inserite.
+- Il numero di errori (ct_err) viene resettato a 0 nel caso in cui si inserisca il codice corretto.
 - Nella FSM è effettuato il controllo di correttezza di CODICE ed il conteggio del numero di cifre inserite, mentre nel Datapath viene memorizzato il numero di tentativi effettuati
-* - Se BLOCCO_BANCOMAT == 1 si entra in uno stato di blocco (in loop)
+- Se BLOCCO_BANCOMAT == 1 si entra in uno stato di blocco (in loop)
 - Nella FSM se CHECK_DISPONIBILITA è verificato si torna allo stato iniziale (ovvero al termine dell'erogazione)
 - Dopo aver inserito il BANCOMAT : 
     1.BANCOMAT_INSERITO don't care 
@@ -47,3 +48,5 @@ Osservazioni:
     3.Non è più possibile rimuovere il BANCOMAT senza effettuare un prelievo (anche da 0 euro)
 - La divisione nel calcolo del CASH_DISPONIBILE è fatta per difetto (si perde un bit)
 - Nel blif non è stato indicato alcun clock, ma è comunque rappresentato nello schema del datapath
+- Si presuppone che dopo aver inserito il bancomat non possa più essere rimosso fino al termine dell'operazione
+- Si presuppone che il bancomat rimanga inserito fino al termine dell'operazione
