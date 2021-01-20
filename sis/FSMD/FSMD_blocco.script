@@ -1,7 +1,7 @@
 # test con il primo input errato, bancomat_inserito 1, cod 450, richiesto 100, disponibile 500
 
 # CODIFICA
-# bancomat_inserito cod3 cod2 cod1 cod0 cr9 cr8 cr7 cr6 cr5 cr4 cr3 cr2 cr1 cr0 cd15 cd14 cd13 cd12 cd11 cd10 cd9 cd8 cd7 cd6 cd5 cd4 cd3 cd2 cd1 cd0
+# bancomat_inserito cod3 cod2 cod1 cod0 cr9 cr8 cr7 cr6 cr5 cr4 cr3 cr2 cr1 cr0 cd15 cd14 cd13 cd12 cd11 cd10 cd9 cd8 cd7 cd6 cd5 cd4 cd3 cd2 cd1 cd0 
 
 # note: 
 # 1 -> tutti i DC in input sono scritti come 0
@@ -69,7 +69,7 @@ simulate 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 
 # RISULTATO:
-# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 A B C D E
+# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 # in più: A B C D E
 # NEXT STATE: ct_err1 ct_err0 minore st3 st2 st1 st0
 # A 0001
 # B 0000

@@ -47,5 +47,3 @@ Osservazioni:
     3.Non è più possibile rimuovere il BANCOMAT senza effettuare un prelievo (anche da 0 euro)
 - La divisione nel calcolo del CASH_DISPONIBILE è fatta per difetto (si perde un bit)
 - Nel blif non è stato indicato alcun clock, ma è comunque rappresentato nello schema del datapath
-- ATTENZIONE! Bisogna fare un giro di clock a vuoto per passare da H a B (o da H a L)!!!
-- DA SISTEMARE -> Aggiungere registro al datapath

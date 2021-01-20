@@ -36,7 +36,7 @@ simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
 # RISULTATO:
-# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 A B C D E
+# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 # in più: A B C D E
 # NEXT STATE: ct_err1 ct_err0 minore st3 st2 st1 st0
 # A 0001
 # B 0000
