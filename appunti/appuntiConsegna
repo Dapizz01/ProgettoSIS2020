@@ -50,3 +50,4 @@ Osservazioni:
 - Nel blif non è stato indicato alcun clock, ma è comunque rappresentato nello schema del datapath
 - Si presuppone che dopo aver inserito il bancomat non possa più essere rimosso fino al termine dell'operazione
 - Si presuppone che il bancomat rimanga inserito fino al termine dell'operazione
+- Ci si pone nello stato I per effettuare la lettura del cash richiesto DOPO l'inserimento della terza cifra corretta del codice
