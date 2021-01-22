@@ -7,9 +7,9 @@ ce4 ce3 ce2 ce1 ce0
 .latch    Z0 T0 as NIL 0
 .latch    Z A as NIL 0
 .latch    [31] LatchOut_v7   0
-.latch    [32] LatchOut_v8   0
+.latch    [61] LatchOut_v8   0
 .latch    [33] LatchOut_v9   0
-.latch    [34] LatchOut_v10   1
+.latch    [65] LatchOut_v10   1
 .names T1 T0 LatchOut_v8 LatchOut_v9 reinserire_cod
 0-11 1
 -011 1
@@ -38,18 +38,18 @@ ce4 ce3 ce2 ce1 ce0
 11 1
 .names A cr0 ce0
 11 1
-.names cod2 cod0 LatchOut_v8 LatchOut_v9 LatchOut_v10 [166] C
+.names cod2 cod0 LatchOut_v8 LatchOut_v9 LatchOut_v10 [87] C
 001010 1
-.names cod2 cod0 LatchOut_v8 LatchOut_v9 LatchOut_v7 [31] [162] [166] [175] D
+.names cod2 cod0 LatchOut_v8 LatchOut_v9 LatchOut_v7 [31] [83] [87] [96] D
 0-----1-- 1
 -0----1-- 1
 --1-----1 1
 --10---1- 1
 ----01-1- 1
-.names T1 [167] [169] Z1
+.names T1 [88] [90] Z1
 111 1
 001 1
-.names D T0 [169] Z0
+.names D T0 [90] Z0
 011 1
 101 1
 .names cr9 cd15 cd14 cd13 cd12 cd11 C c8 Z
@@ -60,19 +60,19 @@ ce4 ce3 ce2 ce1 ce0
 0----11- 1
 0-----11 1
 -----111 1
-.names cr8 cr7 cd10 cd9 c6 [172] c8
+.names cr8 cr7 cd10 cd9 c6 [93] c8
 0-1--- 1
 0--11- 1
 --111- 1
 00---1 1
 -01--1 1
-.names cr6 cr5 cd8 cd7 c4 [173] c6
+.names cr6 cr5 cd8 cd7 c4 [94] c6
 0-1--- 1
 0--11- 1
 --111- 1
 00---1 1
 -01--1 1
-.names cr4 cr3 cd6 cd5 c2 [174] c4
+.names cr4 cr3 cd6 cd5 c2 [95] c4
 0-1--- 1
 0--11- 1
 --111- 1
@@ -86,44 +86,44 @@ ce4 ce3 ce2 ce1 ce0
 -001-1 1
 0-0-11 1
 --0111 1
-.names LatchOut_v9 LatchOut_v10 LatchOut_v7 [159] [31]
+.names LatchOut_v9 LatchOut_v10 LatchOut_v7 [80] [31]
 -01- 1
 0--1 1
-.names C D [162] [175] [32]
+.names C D [83] [96] [61]
 -01- 1
 0--1 1
-.names blocco_bancomat [175] [33]
+.names blocco_bancomat [96] [33]
 1- 1
 -1 1
 .names bancomat_inserito LatchOut_v7 LatchOut_v8 LatchOut_v9 LatchOut_v10 [31] \
-[34]
+[65]
 -10--- 1
 -1---1 1
 0--01- 1
-.names LatchOut_v10 LatchOut_v7 [159]
+.names LatchOut_v10 LatchOut_v7 [80]
 0- 1
 -1 1
-.names LatchOut_v8 LatchOut_v10 LatchOut_v7 [31] [162]
+.names LatchOut_v8 LatchOut_v10 LatchOut_v7 [31] [83]
 10-- 1
 --01 1
-.names cod3 cod1 [166]
+.names cod3 cod1 [87]
 1- 1
 -1 1
-.names D T0 [167]
+.names D T0 [88]
 0- 1
 -0 1
-.names bancomat_inserito C [159] [169]
+.names bancomat_inserito C [80] [90]
 00- 1
 -01 1
-.names cd9 c6 [172]
+.names cd9 c6 [93]
 1- 1
 -1 1
-.names cd7 c4 [173]
+.names cd7 c4 [94]
 1- 1
 -1 1
-.names cd5 c2 [174]
+.names cd5 c2 [95]
 1- 1
 -1 1
-.names LatchOut_v10 [31] [175]
+.names LatchOut_v10 [31] [96]
 11 1
 .end

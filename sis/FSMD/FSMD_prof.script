@@ -1,0 +1,39 @@
+#          |-cod-| |--cashRichiesto--| |-- cashDisponibile         --|
+simulate 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 # Inserimento bacnomat
+#        |         
+#     banc_ins
+
+simulate 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+simulate 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
+simulate 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+simulate 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+
+# RISULTATO:
+# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 
+# NEXT STATE: ct_err1 ct_err0 minore st3 st2 st1 st0
+# A 0001
+# B 0000
+# C 1100
+# F 1000
+# D 1101
+# G 1001
+# E 1011
+# H 1111
+# L 0010
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 # metto bancomat
+Next state: 0000000 # B 
+               |--| 
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 # prima cifra = 5
+Next state: 0001100 # C 
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 # seconda = 0, sbagliata
+Next state: 0101001 # G
+
+Network simulation:
+Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+Next state: 0101111 # H
