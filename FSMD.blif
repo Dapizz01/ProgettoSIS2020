@@ -3,18 +3,18 @@
 cr1 cr0 cd15 cd14 cd13 cd12 cd11 cd10 cd9 cd8 cd7 cd6 cd5 cd4 cd3 cd2 cd1 cd0
 .outputs reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 \
 ce4 ce3 ce2 ce1 ce0
-.latch    Z1 T1 as NIL 0
-.latch    Z0 T0 as NIL 0
-.latch    Z A as NIL 0
+.latch    Z1 T1 re NIL 0
+.latch    Z0 T0 re NIL 0
+.latch    Z A re NIL 0
 .latch    [19] LatchOut_v7   1
 .latch    [20] LatchOut_v8   0
 .latch    [21] LatchOut_v9   1
 .latch    [22] LatchOut_v10   1
-.names blocco_bancomat [88] reinserire_cod
+.names blocco_bancomat [90] reinserire_cod
 01 1
 .names A LatchOut_v7 LatchOut_v9 abilitazione_erog
 110 1
-.names T1 T0 LatchOut_v9 [88] blocco_bancomat
+.names T1 T0 LatchOut_v9 [90] blocco_bancomat
 --11 1
 11-1 1
 .names A cr9 ce9
@@ -37,7 +37,7 @@ ce4 ce3 ce2 ce1 ce0
 11 1
 .names A cr0 ce0
 11 1
-.names cod2 cod0 LatchOut_v9 [20] [83] [85] D
+.names cod2 cod0 LatchOut_v9 [20] [85] [87] D
 0----1 1
 -0---1 1
 --1--1 1
@@ -45,16 +45,16 @@ ce4 ce3 ce2 ce1 ce0
 0-11-- 1
 -011-- 1
 --111- 1
-.names cod2 cod0 LatchOut_v7 LatchOut_v9 [19] [83] [85] E
+.names cod2 cod0 LatchOut_v7 LatchOut_v9 [19] [85] [87] E
 --1-0-- 1
 00-1-01 1
-.names E T1 [86] Z1
+.names E T1 [88] Z1
 011 1
 000 1
 .names D E T0 Z0
 001 1
 100 1
-.names cr9 cd15 cd14 cd13 cd12 cd11 c8 LatchOut_v8 [82] Z
+.names cr9 cd15 cd14 cd13 cd12 cd11 c8 LatchOut_v8 [84] Z
 -1-----01 1
 --1----01 1
 ---1---01 1
@@ -62,19 +62,19 @@ ce4 ce3 ce2 ce1 ce0
 0----1-01 1
 0-----101 1
 -----1101 1
-.names cr8 cr7 cd10 cd9 c6 [92] c8
+.names cr8 cr7 cd10 cd9 c6 [94] c8
 0-1--- 1
 0--11- 1
 --111- 1
 00---1 1
 -01--1 1
-.names cr6 cr5 cd8 cd7 c4 [93] c6
+.names cr6 cr5 cd8 cd7 c4 [95] c6
 0-1--- 1
 0--11- 1
 --111- 1
 00---1 1
 -01--1 1
-.names cr4 cr3 cd6 cd5 c2 [94] c4
+.names cr4 cr3 cd6 cd5 c2 [96] c4
 0-1--- 1
 0--11- 1
 --111- 1
@@ -88,44 +88,44 @@ ce4 ce3 ce2 ce1 ce0
 -001-1 1
 0-0-11 1
 --0111 1
-.names LatchOut_v8 [21] [91] [20]
+.names LatchOut_v8 [21] [93] [20]
 00- 1
 1-0 1
-.names bancomat_inserito LatchOut_v7 LatchOut_v9 [91] [19]
+.names bancomat_inserito LatchOut_v7 LatchOut_v9 [93] [19]
 01-- 1
 --01 1
-.names LatchOut_v7 LatchOut_v9 LatchOut_v8 [88] [21]
+.names LatchOut_v7 LatchOut_v9 LatchOut_v8 [90] [21]
 1--- 1
 ---1 1
 -01- 1
-.names reinserire_cod D E [20] [19] [82] [22]
+.names reinserire_cod D E [20] [19] [84] [22]
 1----- 1
 --1--- 1
 ----1- 1
 -----1 1
 -1-1-- 1
-.names LatchOut_v9 LatchOut_v10 [82]
+.names LatchOut_v9 LatchOut_v10 [84]
 01 1
-.names cod3 cod1 [83]
+.names cod3 cod1 [85]
 1- 1
 -1 1
-.names LatchOut_v8 LatchOut_v10 [85]
+.names LatchOut_v8 LatchOut_v10 [87]
 10 1
-.names D T0 [86]
+.names D T0 [88]
 0- 1
 -0 1
-.names LatchOut_v8 LatchOut_v10 [88]
+.names LatchOut_v8 LatchOut_v10 [90]
 00 1
-.names LatchOut_v7 [21] [91]
+.names LatchOut_v7 [21] [93]
 1- 1
 -0 1
-.names cd9 c6 [92]
+.names cd9 c6 [94]
 1- 1
 -1 1
-.names cd7 c4 [93]
+.names cd7 c4 [95]
 1- 1
 -1 1
-.names cd5 c2 [94]
+.names cd5 c2 [96]
 1- 1
 -1 1
 .end

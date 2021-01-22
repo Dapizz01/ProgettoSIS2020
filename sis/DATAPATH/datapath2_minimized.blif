@@ -1,8 +1,8 @@
 .model datapath2
 .inputs inc_err reset_err
 .outputs tre_err
-.latch    Z1 T1 as NIL 0
-.latch    Z0 T0 as NIL 0
+.latch    Z1 T1 re NIL 0
+.latch    Z0 T0 re NIL 0
 .names T1 T0 tre_err
 11 1
 .names inc_err reset_err tre_err T1 T0 Z1

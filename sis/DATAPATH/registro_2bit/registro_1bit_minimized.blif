@@ -1,5 +1,5 @@
 .model registro_1bit
 .inputs a
 .outputs o
-.latch a o as NIL 0
+.latch    a o re NIL 0
 .end
