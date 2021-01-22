@@ -12,55 +12,64 @@
 
 
 
-# inserimento bancomat
+# inserimento bancomat (A --> B)
 #                  |--------100------| |-----------500---------------|
 simulate 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
-# inserimento prima cifra corretta
+# inserimento prima cifra corretta (B --> C)
 #          |--5--|
 simulate 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
-#inserimento seconda cifra corretta
+#inserimento seconda cifra corretta (C --> D)
 #          |--5--|
 simulate 0 0 1 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
-#inserimento terza cifra corretta
-#          |--0--|
-simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+#inserimento terza cifra corretta (D --> E)
+#          |--0--| |--------1--------| |-----------500---------------|
+simulate 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
-# clock a vuoto (D -> E)       cash richiesto < 1/4 cash disponibile 
+#inserimento cash richiesto (E -> I)       
 #                  |--------100------| |-----------500---------------|
 simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
 
+#risultato cash_ok (I --> A) cash richiesto < 1/4 cash disponibile
+#
+simulate 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0
+
 # RISULTATO:
-# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 # in più: A B C D E
+# OUTPUTS: reinserire_cod abilitazione_erog blocco_bancomat ce9 ce8 ce7 ce6 ce5 ce4 ce3 ce2 ce1 ce0 
 # NEXT STATE: ct_err1 ct_err0 minore st3 st2 st1 st0
-# A 0001
-# B 0000
-# C 1100
-# F 1000
-# D 1101
-# G 1001
-# E 1011
-# H 1111
+# A 1011
+# B 0011
+# C 0100
+# F 0101
+# D 0110
+# G 0111
+# E 0001
+# H 0000
+# I 1101
 # L 0010
 
-# Network simulation:
-# Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
-# Next state: 0000000
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 0000011 # B
 
-# Network simulation:
-# Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# Next state: 0001100
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 0000100 # C
 
-# Network simulation:
-# Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# Next state: 0001101
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 0000110 # D
 
-# Network simulation:
-# Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1
-# Next state: 0011011
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 0000001 # E
 
-# Network simulation:
-# Outputs: 0 1 0 0 0 0 1 1 0 0 1 0 0 1 0 0 0 0
-# Next state: 0000001
+#Network simulation:
+#Outputs: 0 0 0 0 0 0 0 0 0 0 0 0 0
+#Next state: 0011101 # I
+
+#Network simulation:
+#Outputs: 0 1 0 0 0 0 1 1 0 0 1 0 0
+#Next state: 0001011 # A

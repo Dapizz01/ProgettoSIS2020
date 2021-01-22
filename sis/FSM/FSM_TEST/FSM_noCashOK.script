@@ -15,5 +15,8 @@ simulate 0 0 1 0 1 0 0
 # inserimento terza cifra corretta
 simulate 0 0 0 0 0 0 0
 
+#clock a vuoto (stato prossimo: I)
+simulate 0 0 0 0 0 0 0
+
 # cashOK = 0
 simulate 0 0 0 0 0 0 0
