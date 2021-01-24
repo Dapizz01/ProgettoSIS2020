@@ -1,7 +1,0 @@
-sis> UC Berkeley, SIS 1.3.6 (compiled 2017-10-27 16:08:57)
-Warning: network `shifter_dx', node "i0" does not fanout
-sis> sis> shifter_dx    	pi=16	po=16	nodes=  1	latches= 0
-lits(sop)=   0
-sis> sis> shifter_dx    	pi=16	po=16	nodes=  1	latches= 0
-lits(sop)=   0
-sis> 

@@ -1,7 +1,0 @@
-#Prima dello script.rugged
-mux_10bit       pi=21   po=10   nodes= 10       latches= 0
-lits(sop)=  40
-
-#Dopo lo script.rugged
-mux_10bit       pi=21   po=10   nodes= 10       latches= 0
-lits(sop)=  40

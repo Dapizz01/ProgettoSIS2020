@@ -1,7 +1,0 @@
-sis> UC Berkeley, SIS 1.3.6 (compiled 2017-10-27 16:08:57)
-sis> sis> mux           	pi= 3	po= 1	nodes=  1	latches= 0
-lits(sop)=   4
-sis> sis> mux           	pi= 3	po= 1	nodes=  1	latches= 0
-lits(sop)=   4
-unknown command 'write'
-sis> 
